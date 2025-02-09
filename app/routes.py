@@ -23,3 +23,11 @@ def add_task():
         db.session.add(new_task)
         db.session.commit()
     return redirect(url_for("routes.home"))
+
+@routes_bp.route("/delete_task/<int:task_id>", methods=["POST"])
+def delete_task(task_id):
+    task = Task.query.get(task_id)
+    if task:
+        db.session.delete(task)
+        db.session.commit()
+    return redirect(url_for("routes.home"))
