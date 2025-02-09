@@ -20,8 +20,11 @@
         <div class="task-list">
             <h2>Today's Tasks</h2>
             <ul>
-                <!-- Task items will be displayed here -->
+                {% for task in tasks %}
+                <li>{{ task.name }}</li>
+                {% endfor %}
             </ul>
+
         </div>
     </div>
 </body>
