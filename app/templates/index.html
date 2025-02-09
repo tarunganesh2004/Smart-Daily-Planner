@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Daily Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>🗓️ Smart Daily Planner</h1>
+
+        <form action="{{ url_for('routes.add_task') }}" method="POST">
+            <input type="text" name="task_name" placeholder="Enter a new task..." required>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <div class="task-list">
+            <h2>Today's Tasks</h2>
+            <ul>
+                <!-- Task items will be displayed here -->
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
